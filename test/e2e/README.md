@@ -1,25 +1,26 @@
-#End 2 End Testing (Protractor)
-To run the end-2-end tests against the application you use [Protractor](https://github.com/angular/protractor).
+#End 2 End Testing (ngScenario)
+To run the end-2-end tests against the application you use Karma or the `runner.html` page.
 
 ## Starting the Web Server
-In either case you will need the application to be running via the web-server.
+In either case you will need the application to be running via the web-server. 
 From the root folder of the repository run:
 
 ```
-npm start
+node scripts/web-server.js
 ```
 
 The application should now be available at `http://localhost:8000/app/index.html`
 
-## Testing with Protractor
-
-As a one-time setup, download webdriver.
-```
-npm run update-webdriver
-```
-
-Start the Protractor test runner using the e2e configuration:
+## Testing with Karma
+Start the Karma test runner using the e2e configuration:
 
 ```
-npm run protractor
+karma start config/karma-e2e.conf.js
+```
+
+## Testing in a Browser
+Browse directly to the e2e test runner page:
+
+```
+http://localhost:8000/test/e2e/runner.html
 ```
